@@ -88,5 +88,3 @@ venv\Scripts\activate
 # Activate (Mac/Linux)
 
 source venv/bin/activate
-
-python -c "import pandas; import numpy; import sklearn; import yfinance; print('All good!')"
