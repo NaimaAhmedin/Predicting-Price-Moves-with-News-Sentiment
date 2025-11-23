@@ -89,8 +89,4 @@ venv\Scripts\activate
 
 source venv/bin/activate
 
-pip install --upgrade pip
-
-pip install -r requirements.txt
-
 python -c "import pandas; import numpy; import sklearn; import yfinance; print('All good!')"
