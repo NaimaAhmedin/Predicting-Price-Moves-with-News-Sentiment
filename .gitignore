@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environments
+env/
+venv/
+.venv/
+
+# VSCode
+.vscode/
+
+# Data files
+*.csv
+*.xlsx
+*.zip
+*.parquet
+
+# OS files
+.DS_Store
+Thumbs.db
