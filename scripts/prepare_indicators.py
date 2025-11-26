@@ -48,7 +48,13 @@ def process_file(path: Path, out_dir: Path, use_talib: bool = False):
     df["MA50"] = df["Close"].rolling(50).mean()
     df["volatility_20d"] = df["return"].rolling(20).std()
     if use_talib:
-        import talib
+        try:
+            import talib  # type: ignore
+        except Exception:
+            print("ta-lib not available; falling back to pandas implementations")
+            use_talib = False
+
+    if use_talib:
         df["RSI14"] = talib.RSI(df["Close"].values, timeperiod=14)
         macd, signal, hist = talib.MACD(df["Close"].values, fastperiod=12, slowperiod=26, signalperiod=9)
         df["MACD"], df["MACD_signal"], df["MACD_hist"] = macd, signal, hist
